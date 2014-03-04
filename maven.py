@@ -55,9 +55,9 @@ class MavenCommand(sublime_plugin.WindowCommand):
 def search_pom_file(path):
     global workdir
     print("seach_file_in:",path)
-    if path == "/" :
-        return
     _path, _filename = os.path.split(path)
+    if _path == os.path.realpath(path) : #it root
+        return
     if os.path.isfile(_path+os.sep+"pom.xml") :
         workdir = _path
         print("workdir set to",_path)
