@@ -1,4 +1,4 @@
-import sublime, sublime_plugin
+import os, sublime, sublime_plugin
 
 settings = sublime.load_settings('maven.sublime-build')
 mvncmd = settings.get('cmd')
@@ -23,8 +23,15 @@ class MavenGoalsCommand(sublime_plugin.WindowCommand):
 
 class MavenCommand(sublime_plugin.WindowCommand):
     def run(self,opts):
-        print(opts);
+        path, filename = os.path.split(self.window.active_view().file_name())
+        print(path,filename)
+        if filename.lower() == "pom.xml" :
+            self.wrkdir = path
+        else :
+            sublime.status_message("No pom.xml find.")
+            return
         self.cmd =  [mvncmd] 
         self.cmd += [u'-B']
         self.cmd += opts.split(' ')
-        self.window.run_command("exec",{"cmd":self.cmd})
+
+        self.window.run_command("exec",{"cmd":self.cmd, 'working_dir':self.wrkdir})
