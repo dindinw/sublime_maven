@@ -1,0 +1,9 @@
+{
+    "target": "maven_goals",
+    "cmd": "mvn",
+    "working_dir": "${project_path:${folder}}",
+    "windows":
+    {
+        "cmd": "mvn.bat"
+    }
+}

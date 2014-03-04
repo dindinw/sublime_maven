@@ -1,0 +1,23 @@
+[
+    { 
+        "caption": "maven: clean",
+        "command": "maven",
+        "args": {
+            "opts":"clean"
+        }
+    },
+    { 
+        "caption": "maven: install",
+        "command": "maven",
+        "args": {
+            "opts":"clean install"
+        }
+    },
+    { 
+        "caption": "maven: test",
+        "command": "maven",
+        "args": {
+            "opts":"clean test"
+        }
+    },
+]
