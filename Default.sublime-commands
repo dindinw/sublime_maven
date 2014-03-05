@@ -27,4 +27,11 @@
             "opts":"jetty:run"
         }
     },
+    { 
+        "caption": "maven: jetty:stop",
+        "command": "maven",
+        "args": {
+            "opts":"jetty:stop clean"
+        }
+    },
 ]
