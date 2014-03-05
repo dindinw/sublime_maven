@@ -20,4 +20,11 @@
             "opts":"clean test"
         }
     },
+    { 
+        "caption": "maven: jetty:run",
+        "command": "maven",
+        "args": {
+            "opts":"jetty:run"
+        }
+    },
 ]
