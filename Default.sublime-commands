@@ -34,4 +34,25 @@
             "opts":"jetty:stop clean"
         }
     },
+    { 
+        "caption": "maven: compiler:compile",
+        "command": "maven",
+        "args": {
+            "opts":"clean compiler:compile"
+        }
+    },
+    { 
+        "caption": "maven: compiler:testCompile",
+        "command": "maven",
+        "args": {
+            "opts":"clean compiler:testCompile"
+        }
+    },
+    { 
+        "caption": "maven: download source",
+        "command": "maven",
+        "args": {
+            "opts":"dependency:sources"
+        }
+    },
 ]
